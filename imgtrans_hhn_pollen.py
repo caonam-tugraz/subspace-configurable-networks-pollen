@@ -15,7 +15,7 @@ import wandb
 from torchvision import datasets, models, transforms
 import torch.utils.data as data
 
-os.environ["WANDB_API_KEY"] = "fcff66c814af270f0fa4d6ef837609b0da2cccc4"
+os.environ["WANDB_API_KEY"] = ""
 
 parser = argparse.ArgumentParser(description='HHN Project')
 parser.add_argument('--dataset', default='CIFAR10', type=str, help='MNIST | FashionMNIST | CIFAR10 | CIFAR100 | SVHN')
@@ -33,7 +33,7 @@ parser.add_argument('--output', default='.', type=str)
 args = parser.parse_args()
 
 
-img_dir = '/media/khoanam/Data/TUGraz/pytorch-image-classification/img_pollen'
+img_dir = ''
 # dataset_folder = 'images_3_types_dry_5050'
 # dataset_folder = 'images_3_types_half_hydrated_5050'
 # dataset_folder = 'images_3_types_hydrated_5050'
@@ -153,7 +153,7 @@ def main():
     ######## prepare model structure
     model, save_dir = utils.prepare_model(args, nchannels, nclasses, hin=1)
     wandb.init(project=f"SCN_imgtrans_{args.dataset}", 
-                entity="caonam", 
+                entity="", 
                 name=f"SCN_{args.transform}_{save_dir}")
     
 
